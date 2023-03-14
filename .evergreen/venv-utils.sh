@@ -55,9 +55,11 @@ venvcreate() {
 
     case "$mod" in
     venv)
+      echo "taking the venv path"
       "$bin" -m "$mod" --system-site-packages "$real_path" || continue
       ;;
     virtualenv)
+      echo "taking the virtualenv path"
       # -p: some old versions of virtualenv (e.g. installed on Debian 10) are
       # buggy. Without -p, the created virtual environment may use the wrong
       # Python binary (e.g. using a Python 2 binary even if it was created by a
